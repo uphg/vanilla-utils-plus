@@ -1,10 +1,10 @@
 # 🍑 Peach Utils
 
-[简体中文](./README.zh.md) | English
+简体中文 | [English](./README.md)
 
-A modular JavaScript utility library.
+一个模块化的 JavaScript 工具函数库。
 
-## Installation
+## 安装
 
 npm
 
@@ -12,7 +12,7 @@ npm
 npm install peach-utils
 ```
 
-## Usage
+## 用法
 
 ```js
 import { add } from 'peach-utils'
@@ -20,9 +20,9 @@ import { add } from 'peach-utils'
 add(1, 2) // 3
 ```
 
-## About
+## 关于库
 
-This project integrates my other three projects, as follows:
+本库整合了我的其他三个库，如下：
 
 - [Emitter](https://github.com/uphg/emitter)
 - [Event delegation](https://github.com/uphg/event-deleg)
