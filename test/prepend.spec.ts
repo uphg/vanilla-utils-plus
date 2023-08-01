@@ -1,0 +1,39 @@
+import { prepend } from '../src/index'
+
+describe('prepend', () => {
+  let parent: HTMLDivElement | null
+  beforeEach(() => {
+    document.body.innerHTML = `
+      <div class="parent"></div>
+    `
+    parent = document.querySelector('.parent') as HTMLDivElement
+  })
+
+  afterEach(() => {
+    document.body.innerHTML = ''
+    parent = null
+  })
+
+  it('is a function', () => {
+    expect(typeof prepend).toBe('function')
+  })
+
+  it('prepend child element', () => {
+    const foo = document.createElement('div') as HTMLDivElement
+    if (parent) {
+      prepend(parent, foo)
+      expect(parent.children[0]).toBe(foo)
+    }
+  })
+
+  it('prepend multiple elements', () => {
+    const foo = document.createElement('div') as HTMLDivElement
+    const bar = document.createElement('div') as HTMLDivElement
+    if (parent) {
+      prepend(parent, bar)
+      expect(parent.children[0]).toBe(bar)
+      prepend(parent, foo)
+      expect(bar.previousSibling).toBe(foo)
+    }
+  })
+})
