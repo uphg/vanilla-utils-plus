@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Quick Start
-      link: /quick-start
+      link: /document/
     - theme: alt
       text: Markdown Examples
       link: /Markdown Examples
