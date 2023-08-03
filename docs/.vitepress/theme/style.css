@@ -1,0 +1,224 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+/**
+ * Colors
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --vp-c-brand: #646cff;
+  --vp-c-brand-light: #747bff;
+  --vp-c-brand-lighter: #9499ff;
+  --vp-c-brand-lightest: #bcc0ff;
+  --vp-c-brand-dark: #535bf2;
+  --vp-c-brand-darker: #454ce1;
+  --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: var(--vp-c-brand-light);
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: var(--vp-c-brand-light);
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #bd34fe 30%,
+    #41d1ff
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #bd34fe 50%,
+    #47caff 50%
+  );
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+.dark {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+/**
+ * Markdown: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --c-text: #2c3e50;
+  --c-tip-text: var(--c-text);
+  --c-tip: #318a62;
+  --c-tip-bg: #f3f4f5;
+}
+
+.dark {
+  --c-text: #adbac7;
+  --c-tip-bg: #2b313a;
+}
+
+.custom-block {
+  color: var(--vp-c-text-1);
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+
+  padding: 0.5rem 1.5rem;
+  border-left-width: .5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+}
+
+.custom-block .custom-block-title {
+  padding-top: 8px;
+  font-weight: 600;
+}
+
+.custom-block.tip {
+  border-color: var(--c-tip);
+  background-color: var(--c-tip-bg);
+  color: var(--c-tip-text);
+}
+
+/**
+ * Scrollbar
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --scrollbar-size: 7px;
+  --scrollbar-color: rgba(0, 0, 0, 0.25);
+  --scrollbar-color-pressed: rgba(0, 0, 0, 0.4);
+}
+
+.dark {
+  --scrollbar-color: rgba(255, 255, 255, 0.25);
+  --scrollbar-color-pressed: rgba(255, 255, 255, 0.35);
+}
+
+.VPSidebar::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  border-radius: calc(var(--scrollbar-size) / 2);
+  background-color: var(--scrollbar-color);
+}
+
+.VPSidebar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-color-pressed);
+}
+
+.VPSidebar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.vp-doc div[class*='language-'] > pre::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+.vp-doc div[class*='language-'] > pre::-webkit-scrollbar-thumb {
+  border-radius: calc(var(--scrollbar-size) / 2);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.vp-doc div[class*='language-'] > pre::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.vp-doc div[class*='language-'] > pre::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+/* .VPDoc (页面样式) */
+:root {
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
+  Consolas, 'Microsoft Yahei', 'SimHei', 'Liberation Mono', 'Courier New', monospace;
+  --vt-c-text-3: rgba(60, 60, 60, .33);
+}
+
+.dark {
+  --vt-c-text-3: rgba(235, 235, 235, .38);
+}
+
+.vp-doc ul, .vp-doc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vp-doc ul {
+  padding-left: 1.25rem;
+}
+
+.vp-doc li {
+  position: relative;
+  margin: 1px 0;
+}
+
+.vp-doc ul>li:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--vt-c-text-3);
+  transition: background-color .5s;
+  left: -1.25rem;
+  top: .75rem;
+}
+
+.vt-doc p, .vt-doc ul, .vt-doc ol, .vt-doc summary {
+  margin-bottom: 1.2em;
+}

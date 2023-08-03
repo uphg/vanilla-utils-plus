@@ -8,11 +8,11 @@ hero:
   tagline: 使用 TypeScript 书写，良好的类型提示，且使用 Jest 编写单元测试的。
   actions:
     - theme: brand
-      text: Quick Start
-      link: /zh/document/
+      text: 快速开始
+      link: /zh/docs/
     - theme: alt
-      text: Markdown Examples
-      link: /Markdown Examples
+      text: 在 GitHub 上查看
+      link: https://github.com/uphg/peach-utils
 
 features:
   - title: 事件发布订阅

@@ -9,10 +9,11 @@ hero:
   actions:
     - theme: brand
       text: Quick Start
-      link: /document/
+      link: /zh/docs/
     - theme: alt
-      text: Markdown Examples
-      link: /Markdown Examples
+      text: View on GitHub
+      link: https://github.com/uphg/peach-utils
+
 
 features:
   - title: Emitter
