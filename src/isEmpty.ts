@@ -3,7 +3,7 @@ import getObjectTag from './internal/getObjectTag'
 import isArguments from './isArguments'
 import isArray from './isArray'
 
-function isEmpty<T extends unknown>(value: T): value is T {
+function isEmpty<T>(value: T): value is T {
   if (value === void 0 || value === null) {
     return true
   }

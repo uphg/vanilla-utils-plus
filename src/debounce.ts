@@ -26,7 +26,7 @@ function debounce<T extends Function>(
     }
   }
 
-  const debounced = function(..._args: unknown[]) {
+  const debounced = function(this: unknown, ..._args: unknown[]) {
     context = this
     args = _args
     previous = now() // 函数执行时的时间

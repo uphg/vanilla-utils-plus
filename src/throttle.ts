@@ -23,7 +23,7 @@ function throttle<T extends Function>(
     if (!timerId) context = args = null
   }
 
-  const throttled = function(..._args: any) {
+  const throttled = function(this: unknown, ..._args: any) {
     const _now = now()
     if (!previous && !leading) previous = _now
     const remaining = wait - (_now - previous)
