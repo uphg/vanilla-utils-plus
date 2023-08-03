@@ -82,6 +82,8 @@ export { default as toArray } from './toArray'
 
 // string
 export { default as trim } from './trim'
+export { default as trimStart } from './trimStart'
+export { default as trimEnd } from './trimEnd'
 
 // Object
 export { default as create } from './create'
