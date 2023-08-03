@@ -1,9 +1,8 @@
 import each from './each'
 import flatten from './flatten'
-import { MaybeArrayLike } from './types'
 
-function prepend(parent: Node, ...nodes: Array<MaybeArrayLike<Node | null>>) {
-  const children = flatten(nodes) as Node[]
+function prepend(parent: Node, ...nodes: Node[] | Node[][]) {
+  const children = flatten(nodes)
   each(children, (el) => {
     if (!el) return
     const { firstChild } = parent

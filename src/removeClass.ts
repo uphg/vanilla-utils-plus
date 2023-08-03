@@ -1,6 +1,6 @@
 import includes from './includes'
 import getClassList from './getClassList'
-import { HandleClassParams } from './types'
+import { HandleClassParams } from './internal/types'
 import handleClassParams from './internal/handleClassParams'
 
 function removeClass(el: Element, ...args: HandleClassParams[]) {

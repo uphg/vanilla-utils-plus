@@ -1,6 +1,6 @@
 import findIndex from './findIndex'
 
-function getIndex<T extends Element>(el: T | null) {
+function getIndex(el: Node | null) {
   const children = el?.parentNode?.children
   if (!children) return -1
   return findIndex(children, (item) => item === el)

@@ -1,10 +1,9 @@
 import isLength from './isLength'
 
-// 根据给定参数分割数组，返回分割后的剩下的部分
 // remain([1, 2, 3, 4, 5], 2, 1)
 // => [1, 2, 4, 5]
-function remain(
-  array: unknown[],
+function remain<T>(
+  array: Array<T>,
   start: number,
   deleteCount?: number,
 ) {

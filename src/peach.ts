@@ -2,10 +2,8 @@
 export { default as Emitter } from './emitter'
 export { useEmitter } from './emitter'
 
-// Event Deleg
-export { on, off } from './event-deleg'
-
 // DOM API
+export { on, off } from './event-deleg'
 export { default as hasClass } from './hasClass'
 export { default as addClass } from './addClass'
 export { default as removeClass } from './removeClass'
@@ -44,7 +42,7 @@ export { default as remain } from './remain'
 export { default as tail } from './tail'
 export { default as includes } from './includes'
 
-// 类型判断
+// types
 export { default as eq } from './eq'
 export { default as isBoolean } from './isBoolean'
 export { default as isString } from './isString'

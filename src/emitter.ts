@@ -4,8 +4,8 @@ interface EmitterCallback {
 }
 
 class Emitter {
-  public events: { [key: string]: EmitterCallback[] } = {}
-  on<T extends EmitterCallback>(name: string, callback: T) {
+  public events: { [key: string]: (EmitterCallback | Function)[] } = {}
+  on<T extends Function>(name: string, callback: T) {
     if (!callback) return
 
     const e = this.events
@@ -13,7 +13,7 @@ class Emitter {
     e[name].push(callback)
   }
 
-  once<T extends EmitterCallback>(name: string, callback: T) {
+  once<T extends Function>(name: string, callback: T) {
     if (!callback) return
 
     const listener = (...args: unknown[]) => {
@@ -35,14 +35,14 @@ class Emitter {
     }
   }
 
-  off<T extends EmitterCallback>(name: string, callback?: T) {
+  off<T extends Function>(name: string, callback?: T | EmitterCallback) {
     const e = this.events
     if (!e[name]?.length) return
     
     if (callback) {
       const newCache = []
       for (const item of e[name]) {
-        if (item === callback || item._ === callback) continue
+        if (item === callback || (item as EmitterCallback)._ === callback) continue
         item && newCache.push(item)
       }
       e[name] = newCache

@@ -2,7 +2,9 @@ import baseFlatten from './internal/baseFlatten'
 import { RecursiveArrayLike } from './internal/types'
 
 function flatten<T>(array: RecursiveArrayLike<T>) {
-  return array?.length ? baseFlatten<T, T | RecursiveArrayLike<T>>(array, (item) => item) : []
+  return array?.length
+    ? (baseFlatten<T, T | RecursiveArrayLike<T>>(array, (item) => item) as Array<T>)
+    : []
 }
 
 export default flatten

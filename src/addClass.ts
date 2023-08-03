@@ -1,5 +1,5 @@
 import trim from './trim'
-import { HandleClassParams } from './types'
+import { HandleClassParams } from './internal/types'
 import handleClassParams from './internal/handleClassParams'
 
 function addClass(el: Element, ...args: HandleClassParams[]) {

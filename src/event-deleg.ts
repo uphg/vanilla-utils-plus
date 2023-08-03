@@ -14,7 +14,7 @@ export type EventDelegOptions = boolean | EventListenerOptions
 export type EventDelegElement = Element | Document | Window
 
 export function on<T extends EventDelegElement>(
-  el: T,
+  el: Node,
   eventName: string,
   selector: string | EventHandler<T>,
   handler?: EventHandler<T> | AddEventDelegOptions,
@@ -44,7 +44,7 @@ export function on<T extends EventDelegElement>(
 }
 
 export function off<T extends EventDelegElement>(
-  el: T,
+  el: Node,
   eventName: string,
   handler: EventHandler<T>,
   options?: EventDelegOptions

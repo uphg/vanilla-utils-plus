@@ -1,4 +1,4 @@
-function getSiblings<T extends Element>(el: T) {
+function getSiblings(el: Node) {
   if (!el) return []
 
   const children = el.parentNode?.children!

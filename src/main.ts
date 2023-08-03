@@ -1,6 +1,17 @@
-import { cloneDeep } from '.';
+import { Emitter, addBefore, toElement } from '.';
 
-const a = { a: new Set([1, 2, 3]) }
-const b = cloneDeep(a)
-console.log('b')
-console.log(b)
+const emitter = new Emitter()
+
+emitter.on('hi', (a: string) => {
+  console.log(a)
+})
+
+const a = document.createTextNode('123') 
+
+a.appendChild(a)
+
+a.removeChild(a)
+
+addBefore(document.body, a)
+
+toElement('hi')
