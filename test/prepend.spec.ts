@@ -18,15 +18,7 @@ describe('prepend', () => {
     expect(typeof prepend).toBe('function')
   })
 
-  it('prepend child element', () => {
-    const foo = document.createElement('div') as HTMLDivElement
-    if (parent) {
-      prepend(parent, foo)
-      expect(parent.children[0]).toBe(foo)
-    }
-  })
-
-  it('prepend multiple elements', () => {
+  it('prepend child elements', () => {
     const foo = document.createElement('div') as HTMLDivElement
     const bar = document.createElement('div') as HTMLDivElement
     if (parent) {
@@ -34,6 +26,16 @@ describe('prepend', () => {
       expect(parent.children[0]).toBe(bar)
       prepend(parent, foo)
       expect(bar.previousSibling).toBe(foo)
+    }
+  })
+
+  it('prepend array child', () => {
+    const foo = document.createElement('div') as HTMLDivElement
+    const bar = document.createElement('div') as HTMLDivElement
+    if (parent) {
+      prepend(parent, [foo, bar])
+      expect(parent.children[0]).toBe(bar)
+      expect(parent.children[1]).toBe(foo)
     }
   })
 })

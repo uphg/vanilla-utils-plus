@@ -20,20 +20,22 @@ describe('append', () => {
 
   it('append child element', () => {
     const foo = document.createElement('div') as HTMLDivElement
-    if (parent) {
-      append(parent, foo)
-      expect(parent.children[0]).toBe(foo)
-    }
-  })
-
-  it('append multiple elements', () => {
-    const foo = document.createElement('div') as HTMLDivElement
     const bar = document.createElement('div') as HTMLDivElement
     if (parent) {
       append(parent, foo)
       expect(parent.children[0]).toBe(foo)
       append(parent, bar)
       expect(foo.nextSibling).toBe(bar)
+    }
+  })
+
+  it('append array child', () => {
+    const foo = document.createElement('div') as HTMLDivElement
+    const bar = document.createElement('div') as HTMLDivElement
+    if (parent) {
+      append(parent, [foo, bar])
+      expect(parent.children[0]).toBe(foo)
+      expect(parent.children[1]).toBe(bar)
     }
   })
 })
