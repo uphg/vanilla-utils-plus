@@ -1,7 +1,7 @@
 import path from 'path'
-import { execa } from 'execa'
 import fs from 'fs-extra'
 import { fileURLToPath } from 'url';
+import { execa } from 'execa'
 import minimist from 'minimist'
 
 const __filename = fileURLToPath(import.meta.url);
@@ -35,16 +35,16 @@ async function run(argv) {
   if (fs.existsSync(distDir)) {
     await fs.remove(distDir)
   }
-
-  await execa('rollup', ['-c', 'rollup.config.ts', '--environment', 'CJS', '--configPlugin', '@rollup/plugin-typescript'])
-  // await execa('rollup', ['-c', '--environment', 'CJS'])
-  // await fs.remove(resolve('index.js'))
-  await execa('rollup', ['-c', 'rollup.config.ts', '--environment', 'ESM', '--configPlugin', '@rollup/plugin-typescript'])
-  // await execa('rollup', ['-c', '--environment', 'ESM'])
-  await execa('rollup', ['-c', 'rollup.config.ts', '--configPlugin', '@rollup/plugin-typescript'])
+  await rollupBuild('--environment', 'CJS')
+  await rollupBuild('--environment', 'ESM')
+  await rollupBuild()
   await execa('eslint', ['dist', '--fix'])
   const strPackage = JSON.stringify(packageJson, null, 2)
   fs.writeFile(resolve('./package.json'), strPackage)
-  await execa('cp', ['README.md', 'dist'])
+  await execa('cp', ['README.md', 'README.zh.md', 'dist'])
   console.log('build ok!')
+}
+
+function rollupBuild(...args) {
+  return execa('rollup', ['-c', 'rollup.config.ts', ...args, '--configPlugin', '@rollup/plugin-typescript'])
 }

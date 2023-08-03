@@ -19,7 +19,7 @@ const outputConfigs = {
     preserveModules: true,
     dir: 'dist/cjs',
     format: 'cjs',
-    exports: 'auto'
+    exports: 'named'
   },
   umd: {
     name: 'peach',
