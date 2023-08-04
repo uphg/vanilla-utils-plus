@@ -1,24 +1,24 @@
+import { EachCallback, Key } from './internal/types'
 import isArrayLike from './isArrayLike'
 import keys from './keys'
-import type { Key } from './internal/types'
 
 function each<T>(
-  object: ArrayLike<T> | Record<Key, T>,
-  callback: (item: T, inedx: number | string, object: ArrayLike<T> | Record<Key, T>) => void
+  obj: ArrayLike<T> | Record<Key, T>,
+  callback: EachCallback<T>
 ) {
-  if (isArrayLike(object)) {
+  if (isArrayLike(obj)) {
     let index = -1
-    const length = object.length
+    const length = obj.length
     while (++index < length) {
-      callback((object as T[])[index], index, object)
+      callback((obj as T[])[index], index, obj)
     }
   } else {
     let index = -1
-    const propNames = keys(object)
+    const propNames = keys(obj)
     const length = propNames.length
     while (++index < length) {
       const key = propNames[index]
-      callback((object as Record<Key, T>)[key], key, object)
+      callback((obj as Record<Key, T>)[key], key, obj)
     }
   }
 }

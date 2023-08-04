@@ -14,10 +14,10 @@ const setTag = '[object Set]'
 /** 内置值引用 */
 const symIterator = Symbol.iterator
 
-function toArray(value: any) {
+function toArray<T>(value: any): T[] | string[] {
   if (!value) return []
   if (isArrayLike(value)) {
-    return isString(value) ? stringToArray(value as string) : copyArray<unknown>(value as unknown[])
+    return isString(value) ? stringToArray(value as string) : copyArray<T>(value as T[])
   }
 
   if (symIterator && value[symIterator]) {

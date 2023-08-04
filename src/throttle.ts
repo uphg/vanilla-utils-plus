@@ -1,10 +1,15 @@
 import now from './now'
 
+type throttleOptions = {
+  leading?: boolean;
+  trailing?: boolean;
+}
+
 // 节流函数
 function throttle<T extends Function>(
   func: T,
   wait: number,
-  options?: { leading?: boolean, trailing?: boolean }
+  options?: throttleOptions
 ) {
   const { leading = true, trailing = true } = options ?? {}
 

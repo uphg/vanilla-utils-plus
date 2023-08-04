@@ -1,6 +1,6 @@
 import isTag from './internal/isTag';
 
-function isSet(value: unknown): value is Set<unknown> {
+function isSet<T>(value: unknown): value is Set<T> {
   return isTag(value, 'Set')
 }
 

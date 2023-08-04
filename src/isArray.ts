@@ -1,6 +1,6 @@
 import isTag from './internal/isTag'
 
-function isArray(value: unknown): value is Array<unknown> {
+function isArray<T>(value: unknown): value is T[] {
   return isTag(value, 'Array')
 }
 

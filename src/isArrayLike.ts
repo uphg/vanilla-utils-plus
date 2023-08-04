@@ -1,6 +1,6 @@
 import isLength from './isLength'
 
-function isArrayLike(value: unknown): value is ArrayLike<unknown> | string {
+function isArrayLike(value: unknown): value is unknown[] | string {
   return value !== void 0 && value !== null && typeof value !== 'function' && isLength((value as ArrayLike<unknown>).length)
 }
 

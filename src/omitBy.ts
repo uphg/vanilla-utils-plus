@@ -4,15 +4,15 @@ import { PickByCallback } from './internal/types'
 import isNil from './isNil'
 import keys from './keys'
 
-function omitBy<T extends object>(object: T, callback: PickByCallback<T>, withSymbol = false) {
-  if (isNil(object)) return {}
-  const _propNames = keys(object)
+function omitBy<T extends object>(obj: T, callback: PickByCallback<T>, withSymbol = false): T | {} {
+  if (isNil(obj)) return {}
+  const _propNames = keys(obj)
   const propNames = (
     withSymbol
-      ? (_propNames as (string | symbol)[]).concat(getSymbols(object))
+      ? (_propNames as (string | symbol)[]).concat(getSymbols(obj))
       : _propNames
   ) as Array<keyof T>
-  return basePickBy(object, propNames, (value, key) => !callback(value, key))
+  return basePickBy(obj, propNames, (value, key) => !callback(value, key))
 }
 
 export default omitBy

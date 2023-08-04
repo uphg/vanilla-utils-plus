@@ -23,3 +23,5 @@ export type MaybeArrayLike<T> = T | ArrayLike<T>
 export type HandleClassParams = MaybeArrayLike<string> | (HandleClassCallback)
 
 export type HandleClassCallback = (currentClass: string) => MaybeArrayLike<string>
+
+export type EachCallback<T> = (item: T, inedx: number | string, object: ArrayLike<T> | Record<string | number, T>) => void

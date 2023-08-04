@@ -1,4 +1,4 @@
-function delay<T extends TimerHandler, A extends unknown[]>(func: T, wait: number, ...args: A) {
+function delay<T extends TimerHandler, U extends unknown[]>(func: T, wait: number, ...args: U) {
   return setTimeout(func, +wait || 0, ...args)
 }
 
