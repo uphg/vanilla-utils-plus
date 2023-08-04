@@ -54,7 +54,9 @@ export default defineConfig({
             items: [
               { text: 'Emitter', link: '/zh/docs/emitter' },
               { text: 'DOM API', link: '/zh/docs/dom' },
+              { text: '合集', link: '/zh/docs/collection' },
               { text: '数组', link: '/zh/docs/array' },
+              { text: '类型', link: '/zh/docs/type' },
             ]
           }
         ],
