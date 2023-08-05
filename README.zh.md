@@ -1,6 +1,6 @@
 # 🍑 Peach Utils
 
-简体中文 | [English](./README.md)
+[English](./README.md) | 简体中文
 
 一个模块化的 JavaScript 工具函数库。
 

@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Quick Start
-      link: /zh/docs/
+      link: /docs/
     - theme: alt
       text: View on GitHub
       link: https://github.com/uphg/peach-utils

@@ -1,6 +1,6 @@
 # 🍑 Peach Utils
 
-[简体中文](./README.zh.md) | English
+English | [简体中文](./README.zh.md)
 
 A modular JavaScript utility library.
 

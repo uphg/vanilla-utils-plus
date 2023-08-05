@@ -1,5 +1,27 @@
 # 类型
 
+## cloneDeep
+
+- **类型**
+
+  ```ts
+  function cloneDeep<T>(value: T, count?: { value: number; }): T
+  ```
+
+- **描述**
+
+  对指定值进行深度克隆。
+
+- **示例**
+
+  ```js
+  const object = [{ a: 1 }, { b: 2 }]
+
+  const object2 = cloneDeep(object)
+  console.log(object2[0] === object[0])
+  // => false
+  ```
+
 ## eq
 
 - **类型**
