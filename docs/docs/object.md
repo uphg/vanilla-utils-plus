@@ -1,20 +1,20 @@
-# 对象
+# Object
 
 ## create
 
-- **类型**
+- **type**
 
   ```ts
   function create(prototype: Object | null, properties?: Object | null): any
   ```
 
-- **描述**
+- **description**
 
-  创建一个继承自指定原型的对象的对象，如果 properties 存在则复制该 properties 对象本身的可枚举字符串 key 给创建的对象。
+  Creates an object that inherits from the specified prototype and, if properties exist, copies the enumerable string key of the properties object itself to the created object.
 
-- **示例**
+- **example**
 
-  ```ts
+  ```js
   function Foo() {
     this.a = 0;
     this.b = 1;
@@ -38,17 +38,17 @@
 
 ## values
 
-- **类型**
+- **type**
 
   ```ts
   function values(obj: object): any[]
   ```
 
-- **描述**
+- **description**
 
-  返回对象所有 value 组成的数组。
+  Returns an array of all values of an object.
 
-- **示例**
+- **example**
 
   ```js
   function Func() {
@@ -57,89 +57,89 @@
   }
   Func.prototype.c = 3
   const f1 = new Func()
-
+  
   values(f1)
   // => ['a', 'b']
-
+  
   values({ a: 1, b: 2, c: 3 })
   // => [1, 2, 3]
-
+  
   values('hi')
   // => ['h', 'i']
   ```
 
 ## has
 
-- **类型**
+- **type**
 
   ```ts
   function has(obj: object, key: Key): boolean
   ```
 
-- **描述**
+- **description**
 
-  判断对象的指定属性是否为自身属性。
+  Determines whether the specified property of an object is its own property.
 
-- **示例**
+- **example**
 
   ```js
   const object = { a: 1, b: 2 }
-
+  
   has(object, 'a')
   // => true
-
+  
   has(object, 'toString')
   // => false
   ```
 
 ## hasIn
 
-- **类型**
+- **type**
 
   ```ts
   function hasIn(obj: unknown, key: string | number): boolean
   ```
 
-- **描述**
+- **description**
 
-  判断对象的指定属性是否为自身或原型的属性。
+  Determines whether the specified property of an object is itself or a property of the prototype.
 
-- **示例**
+- **example**
 
   ```js
   const object = { a: 1, b: 2 }
-
+  
   hasIn(object, 'a')
   // => true
-
+  
   hasIn(object, 'toString')
   // => true
   ```
 
 ## pick
 
-- **类型**
+- **type**
 
   ```ts
   function pick<T extends object>(obj: T, includes: Array<keyof T>): T | {}
   ```
 
-- **描述**
+- **description**
 
-  创建一个由 keys 列表指定的 key 值的对象。
+  Creates an object with the key value specified by the keys list.
 
-- **示例**
+- **example**
 
   ```js
   const object = { a: '1', b: 2, c: 3 }
-
+  
   pick(object, ['a', 'c'])
   // => { a: '1', c: 3 }
   ```
 
 ## pickBy
 
-- **类型**
+- **type**
 
   ```ts
   function pickBy<T extends object>(
@@ -147,22 +147,22 @@
   ): T | {}
   ```
 
-- **描述**
+- **description**
 
-  创建一个包含所有 callback return 值为 ture 的组成的新对象，callback 每次调用传入两个参数：value，key。
+  Create a new object containing all callback return components with a ture value, and callback passes in two parameters per call: value, key.
 
-- **示例**
+- **example**
 
   ```js
   const object = { a: '1', b: 2, c: 3 }
-
+  
   pickBy(object, (value) => isNumber)
   // => { b: 2, c: 3 }
   ```
 
 ## omit
 
-- **类型**
+- **type**
 
   ```ts
   function omit<T extends object>(
@@ -170,22 +170,22 @@
   ): T | {}
   ```
 
-- **描述**
+- **description**
 
-  与 pick 相反，创建一个除了指定的 keys 列表以外的对象所有 key 组成的新对象。
+  In contrast to pick, creates a new object consisting of all keys except the specified list of keys.
 
-- **示例**
+- **example**
 
   ```js
   const object = { a: '1', b: 2, c: 3 }
-
+  
   pick(object, ['a', 'c'])
   // => { b: 2 }
   ```
 
 ## omitBy
 
-- **类型**
+- **type**
 
   ```ts
   function omitBy<T extends object>(
@@ -193,15 +193,15 @@
   ): T | {}
   ```
 
-- **描述**
+- **description**
 
-  与 pickBy 相反，创建一个不包含所有 callback return 值为 ture 的组成的新对象，callback 每次调用传入两个参数：value，key。
+  In contrast to pickBy, a new object is created that does not contain all callback values of ture, and callback passes in two parameters per call: value, key.
 
-- **示例**
+- **example**
 
   ```js
   const object = { a: '1', b: 2, c: 3 }
-
+  
   pickBy(object, (value) => isNumber)
   // => { b: 2, c: 3 }
   ```

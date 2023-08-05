@@ -1,11 +1,13 @@
 # Emitter
 
-Create an event publish subscribe object
+Create an event publish-subscribe object.
 
-## Usage
+## Basic usage
 
 ```js
 import Emitter from 'small-emitter'
+// or import { useEmitter } from 'small-emitter'
+
 const emitter = new Emitter();
 
 function fn(p1, p2, p3) {
@@ -30,85 +32,125 @@ emitter.clear()
 
 ## on
 
-`on(name: string, callback: () => void)`
+- **type**
 
-Subscribe to an event
+  ```ts
+  Emitter.on<T extends Function>(name: string, callback: T): void
+  ```
 
-```js
-const emitter = new Emitter()
+- **description**
 
-emitter.on('foo', (data) => {
-  console.log(data)
-})
-```
+  Subscribe to events.
+
+- **example**
+
+  ```js
+  const emitter = new Emitter()
+  
+  emitter.on('foo', (data) => {
+    console.log(data)
+  })
+  ```
 
 ## once
 
-`once(name: string, callback: () => void)`
+- **type**
 
-Subscribe to an event only once
+  ```ts
+  Emitter.once<T extends Function>(name: string, callback: T): void
+  ```
 
-```js
-const emitter = new Emitter()
+- **description**
 
-emitter.on('foo', (data) => {
-  console.log(data)
-})
-```
+  Subscribe to events only once.
+
+- **example**
+
+  ```js
+  const emitter = new Emitter()
+  
+  emitter.on('foo', (data) => {
+    console.log(data)
+  })
+  ```
 
 ## emit
 
-`emit(name: string, ...args: any[])`
+- **type**
 
-Trigger a named event
+  ```ts
+  Emitter.emit<T extends unknown[]>(name: string, ...args: T): void
+  ```
 
-```js
-const emitter = new Emitter()
+- **description**
 
-emitter.on('bar', (message, name) => {
-  console.log(`${message}, ${name}`)
-})
+  Triggers the specified event.
 
-emitter.emit('bar', 'hi', 'Jack') // hi, Jack
-```
+- **example**
+
+  ```js
+  const emitter = new Emitter()
+  
+  emitter.on('bar', (message, name) => {
+    console.log(`${message}, ${name}`)
+  })
+  
+  emitter.emit('bar', 'hi', 'Jack') // hi, Jack
+  ```
 
 ## off
 
-`off(name: string, callback?: () => void)`
+- **type**
 
-Clear subscription events
+  ```ts
+  Emitter.off<T extends Function>(name: string, callback?: T): void
+  ```
 
-```js
-const emitter = new Emitter()
+- **description**
 
-const fn = (message) => {
-  console.log(message)
-}
+  Clears the specified event subscription.
 
-emitter.on('bar', fn)
-emitter.emit('bar', 'hi') // hi
-emitter.off('bar', fn)
-emitter.emit('bar', 'Jack') // Not output
-```
+- **example**
+
+  ```js
+  const emitter = new Emitter()
+  
+  const fn = (message) => {
+    console.log(message)
+  }
+  
+  emitter.on('bar', fn)
+  emitter.emit('bar', 'hi') // hi
+  emitter.off('bar', fn)
+  emitter.emit('bar', 'Jack') // Not output
+  ```
 
 ## clear
 
-`clear()`
+- **type**
 
-Clear all subscribed events
+  ```ts
+  Emitter.clear(): void
+  ```
 
-```js
-const emitter = new Emitter()
+- **description**
 
-emitter.on('foo', (value) => {
-  console.log(value)
-})
+  Clear all event subscriptions.
 
-emitter.on('bar', (value) => {
-  console.log(value)
-})
+- **example**
 
-emitter.emit('foo', 'hi, foo')
-emitter.emit('bar', 'hi, bar')
-emitter.clear()
-```
+  ```js
+  const emitter = new Emitter()
+  
+  emitter.on('foo', (value) => {
+    console.log(value)
+  })
+  
+  emitter.on('bar', (value) => {
+    console.log(value)
+  })
+  
+  emitter.emit('foo', 'hi, foo')
+  emitter.emit('bar', 'hi, bar')
+  emitter.clear()
+  ```

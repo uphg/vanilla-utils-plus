@@ -26,7 +26,11 @@ export default defineConfig({
             items: [
               { text: 'Emitter', link: '/docs/emitter' },
               { text: 'DOM API', link: '/docs/dom' },
+              { text: 'Collection', link: '/docs/collection' },
               { text: 'Array', link: '/docs/array' },
+              { text: 'Object', link: '/docs/object' },
+              { text: 'Function', link: '/docs/function' },
+              { text: 'Type', link: '/docs/type' },
             ]
           }
         ],
@@ -57,6 +61,7 @@ export default defineConfig({
               { text: '合集', link: '/zh/docs/collection' },
               { text: '数组', link: '/zh/docs/array' },
               { text: '对象', link: '/zh/docs/object' },
+              { text: '函数', link: '/zh/docs/function' },
               { text: '类型', link: '/zh/docs/type' },
             ]
           }

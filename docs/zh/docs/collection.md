@@ -158,3 +158,30 @@
   findLastIndex(array, (item) => item === 3, 3)
   // => 2
   ```
+
+## includes
+
+- **类型**
+
+  ```ts
+  function includes<T>(
+    array: ArrayLike<T>, value: unknown, fromIndex?: number
+  ): boolean
+  ```
+
+- **描述**
+
+  检查 value 是否在集合中，如果找到则返回 true，否则返回 false。
+
+- **示例**
+
+  ```js
+  includes([1, 2, 3], 1)
+  // => true
+  
+  includes([1, 2, 3], 1, 2)
+  // => false
+
+  includes([1, 2, NaN, 3], NaN)
+  // => true
+  ```
