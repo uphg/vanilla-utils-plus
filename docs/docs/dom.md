@@ -134,7 +134,7 @@
   append(document.body, app)
   ```
 
-## getScrollbarWidth[](http://localhost:5173/peach-utils/zh/docs/dom.html#getscrollbarwidth)
+## getScrollbarWidth
 
 - **type**
 

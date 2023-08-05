@@ -29,7 +29,7 @@
   fn.cancel()
   ```
 
-## throttle[](http://localhost:5173/peach-utils/zh/docs/function.html#throttle)
+## throttle
 
 - **type**
 
@@ -56,7 +56,7 @@
   throttle(() => {}, { trailing: false })
   ```
 
-## delay[](http://localhost:5173/peach-utils/zh/docs/function.html#delay)
+## delay
 
 - **type**
 
