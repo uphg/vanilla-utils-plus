@@ -1,9 +1,8 @@
 import { MAX_SAFE_INTEGER } from './common'
 
-// 检测无符号的整数
+// unsigned integer
 const reIsUint = /^(?:0|[1-9]\d*)$/
 
-// 检测是否为 数组或类数组的 index 索引，length 表示长度
 function isIndex(value: any, length: any) {
   const type = typeof value
   length = (length === null || length === void 0) ? MAX_SAFE_INTEGER : length

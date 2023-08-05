@@ -3,7 +3,6 @@ import isNaN from './isNaN'
 import baseIndexOf from './internal/baseIndexOf'
 import baseFindIndex from './internal/baseFindIndex'
 
-// 返回数组中某项第一次出现的位置
 function indexOf<T>(
   array: ArrayLike<T> = [],
   value: T,

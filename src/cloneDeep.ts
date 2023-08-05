@@ -107,7 +107,6 @@ function cloneDeep<T>(value: T, count?: { value: number }): T {
   const stack: [any, any][] = [[value, result]]
 
   while (stack.length) {
-    // 临时计数
     count && (count.value += 1)
 
     const piece = stack.shift() as [any, any]

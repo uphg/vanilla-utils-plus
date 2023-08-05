@@ -1,7 +1,6 @@
 import toNumber from './toNumber'
 import { INFINITY, MAX_INTEGER } from './internal/common'
 
-// 转有限数字
 function toFinite(value: unknown): number {
   if (!value) {
     return value === 0 ? value : 0

@@ -5,7 +5,6 @@ let _devicePixelRatio: number | null = null
 
 if (isClient) {
   window.addEventListener('resize', () => {
-    // 页面缩放
     if (_devicePixelRatio !== window.devicePixelRatio) {
       _devicePixelRatio = window.devicePixelRatio
       scrollbarWidth = null

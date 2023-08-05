@@ -1,8 +1,7 @@
 import now from './now'
 
-// 防抖函数
 function debounce<T extends Function>(
-  func: T,
+  fn: T,
   wait: number,
   immediate = false
 ) {
@@ -19,9 +18,8 @@ function debounce<T extends Function>(
       timerId = setTimeout(later, wait - passed)
     } else {
       timerId = null  
-      if (!immediate) result = func.apply(context, args)
+      if (!immediate) result = fn.apply(context, args)
 
-      // 避免 func 函数递归调用 `debounced`。
       if (!timerId) args = context = null
     }
   }
@@ -29,11 +27,11 @@ function debounce<T extends Function>(
   const debounced = function(this: unknown, ..._args: unknown[]) {
     context = this
     args = _args
-    previous = now() // 函数执行时的时间
+    previous = now()
 
     if (!timerId) {
       timerId = setTimeout(later, wait)
-      if (immediate) result = func.apply(context, args)
+      if (immediate) result = fn.apply(context, args)
     }
 
     return result

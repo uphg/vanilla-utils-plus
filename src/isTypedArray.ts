@@ -2,7 +2,7 @@ import isObjectLike from './isObjectLike';
 import getObjectTag from './internal/getObjectTag';
 import { TypedArray } from './internal/types';
 
-// 匹配以下内容
+// Include:
 // [object Float32Array]
 // [object Float64Array]
 // [object Int8Array]

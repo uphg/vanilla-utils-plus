@@ -5,9 +5,8 @@ type throttleOptions = {
   trailing?: boolean;
 }
 
-// 节流函数
 function throttle<T extends Function>(
-  func: T,
+  fn: T,
   wait: number,
   options?: throttleOptions
 ) {
@@ -23,7 +22,7 @@ function throttle<T extends Function>(
   const later = function() {
     previous = !leading ? 0 : now()
     timerId = null
-    result = func.apply(context, args)
+    result = fn.apply(context, args)
 
     if (!timerId) context = args = null
   }
@@ -35,7 +34,6 @@ function throttle<T extends Function>(
     context = this
     args = _args
 
-    // remaining > wait，表示客户端系统时间被调整过，立即执行 func 函数，并且清除之前的定时器
     if (remaining <= 0 || remaining > wait) {
       if (timerId) {
         clearTimeout(timerId)
@@ -43,7 +41,7 @@ function throttle<T extends Function>(
       }
 
       previous = _now
-      result = func.apply(context, args as unknown[])
+      result = fn.apply(context, args as unknown[])
 
       if (!timerId) context = args = null
     } else if (!timerId && trailing) {

@@ -70,8 +70,6 @@ export { default as isMap } from './isMap'
 export { default as isWeakMap } from './isWeakMap'
 export { default as isSet } from './isSet'
 export { default as isWeakSet } from './isWeakSet'
-
-// 类型转换
 export { default as toFinite } from './toFinite'
 export { default as toInteger } from './toInteger'
 export { default as toNumber } from './toNumber'

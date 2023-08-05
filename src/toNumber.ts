@@ -3,13 +3,13 @@ import isSymbol from './isSymbol'
 import trim from './trim'
 import { _Number, NAN, _parseInt } from './internal/common'
 
-// 检测不规范的十六进制字符串值
+// Illegal hexadecimal string value
 const reIsBadHex = /^[-+]0x[0-9a-f]+$/i
 
-// 检测二进制字符串值
+// binary string value
 const reIsBinary = /^0b[01]+$/i
 
-// 检测八进制字符串值
+// Octal string value
 const reIsOctal = /^0o[0-7]+$/i
 
 function toNumber(value: any) {
