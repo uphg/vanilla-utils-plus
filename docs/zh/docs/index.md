@@ -5,15 +5,15 @@
 ::: code-group
 
 ```sh [npm]
-$ npm install -D vanilla-utils-plus
+$ npm install vanilla-utils-plus
 ```
 
 ```sh [pnpm]
-$ pnpm add -D vanilla-utils-plus
+$ pnpm add vanilla-utils-plus
 ```
 
 ```sh [yarn]
-$ yarn add -D vanilla-utils-plus
+$ yarn add vanilla-utils-plus
 ```
 
 :::
