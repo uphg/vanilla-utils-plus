@@ -22,7 +22,7 @@ function map<T, U>(obj: MapObject<T>, callback: MapCallback<T, U>): U[]{
 
     while (++index < propNames.length) {
       const key = propNames[index]
-      result[index] = callback(obj[key], key, obj)
+      result[index] = callback(obj[key] as T, key, obj)
     }
     return result
   }

@@ -1,4 +1,4 @@
-import * as peach from './peach'
+import * as utils from './utils'
 
-export * from './peach'
-export { peach as default }
+export * from './utils'
+export { utils as default }

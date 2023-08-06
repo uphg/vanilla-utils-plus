@@ -1,6 +1,6 @@
 import { hasOwnProperty } from './internal/common'
 
-function _keys<T extends object>(object: T) {
+function _keys<T extends object>(object: T): (keyof T)[] {
   object = Object(object)
   const result = []
   for (const key in object) {
@@ -11,8 +11,8 @@ function _keys<T extends object>(object: T) {
   return result
 }
 
-function keys<T extends object>(object: T) {
-  return Object.keys(Object(object))
+function keys<T extends object>(object: T): (keyof T)[] {
+  return Object.keys(Object(object)) as (keyof T)[]
 }
 
 export default Object.keys! ? keys : _keys

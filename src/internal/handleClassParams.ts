@@ -1,7 +1,7 @@
 import isArray from '../isArray'
 import isString from '../isString'
 import isFunction from '../isFunction'
-import { HandleClassParams, HandleClassCallback } from '../types'
+import { HandleClassParams, HandleClassCallback } from './types'
 
 function handleClassParams(el: Element, ...args: HandleClassParams[]) {
   let result: string[] = []
