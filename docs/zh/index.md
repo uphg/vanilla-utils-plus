@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "🍑 Peach Utils"
+  name: "📦 Vanilla Utils Plus"
   text: "JavaScript 常用工具函数库"
   tagline: 使用 TypeScript 书写，良好的类型提示，且使用 Jest 编写单元测试的。
   actions:
@@ -12,7 +12,7 @@ hero:
       link: /zh/docs/
     - theme: alt
       text: 在 GitHub 上查看
-      link: https://github.com/uphg/peach-utils
+      link: https://github.com/uphg/vanilla-utils-plus
 
 features:
   - title: 事件发布订阅

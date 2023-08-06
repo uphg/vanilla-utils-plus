@@ -17,7 +17,7 @@ run(argv)
 async function run(argv) {
   const { v: version = '0.0.1-alpha.1' } = argv
   const packageJson = {
-    name: 'peach-utils',
+    name: 'vanilla-utils-plus',
     version,
     license: 'MIT',
     main: 'index.umd.js',
@@ -25,9 +25,9 @@ async function run(argv) {
     types: 'index.d.js',
     description: 'A modular JavaScript utility library',
     keywords: ['javascript', 'utility', 'array', 'object', 'function'],
-    homepage: 'https://github.com/uphg/peach-utils#readme',
-    repository: 'uphg/peach-utils',
-    bugs: 'uphg/peach-utils/issues',
+    homepage: 'https://github.com/uphg/vanilla-utils-plus#readme',
+    repository: 'uphg/vanilla-utils-plus',
+    bugs: 'uphg/vanilla-utils-plus/issues',
     author: 'Lv Heng <lvheng233@gmail.com>'
   }
 

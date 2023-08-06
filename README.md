@@ -1,4 +1,4 @@
-# 🍑 Peach Utils
+# 📦 Vanilla Utils Plus
 
 English | [简体中文](./README.zh.md)
 
@@ -9,13 +9,13 @@ A modular JavaScript utility library.
 npm
 
 ```js
-npm install peach-utils
+npm install vanilla-utils-plus
 ```
 
 ## Usage
 
 ```js
-import { add } from 'peach-utils'
+import { add } from 'vanilla-utils-plus'
 
 add(1, 2) // 3
 ```

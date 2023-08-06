@@ -22,7 +22,7 @@ const outputConfigs = {
     exports: 'named'
   },
   umd: {
-    name: 'peach',
+    name: 'VanillaUtilsPlus',
     file: 'dist/index.umd.js',
     format: 'umd'
   }

@@ -2,12 +2,12 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/peach-utils/',
+  base: '/vanilla-utils-plus/',
 
   locales: {
     root: {
       label: 'English',
-      title: "🍑 Peach Utils",
+      title: "📦 Vanilla Utils Plus",
       description: "A modular JavaScript utility library.",
       themeConfig: {
         nav: [
@@ -39,7 +39,7 @@ export default defineConfig({
     zh: {
       link: '/zh/',
       label: '简体中文',
-      title: '🍑 Peach Utils',
+      title: '📦 Vanilla Utils Plus',
       description: '一个模块化 JavaScript 实用程序库。',
       themeConfig: {
         nav: [
@@ -72,7 +72,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/uphg/peach-utils' }
+      { icon: 'github', link: 'https://github.com/uphg/vanilla-utils-plus' }
     ],
     search: {
       provider: 'local',

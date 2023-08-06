@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "🍑 Peach Utils"
+  name: "📦 Vanilla Utils Plus"
   text: "JavaScript utility library"
   tagline: "Written in TypeScript, well type hinted, and unit tested with Jest."
   actions:
@@ -12,7 +12,7 @@ hero:
       link: /docs/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/uphg/peach-utils
+      link: https://github.com/uphg/vanilla-utils-plus
 
 
 features:

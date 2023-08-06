@@ -1,4 +1,4 @@
-# 🍑 Peach Utils
+# 📦 Vanilla Utils Plus
 
 [English](./README.md) | 简体中文
 
@@ -9,13 +9,13 @@
 npm
 
 ```js
-npm install peach-utils
+npm install vanilla-utils-plus
 ```
 
 ## 用法
 
 ```js
-import { add } from 'peach-utils'
+import { add } from 'vanilla-utils-plus'
 
 add(1, 2) // 3
 ```

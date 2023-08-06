@@ -5,15 +5,15 @@
 ::: code-group
 
 ```sh [npm]
-$ npm install -D peach-utils
+$ npm install -D vanilla-utils-plus
 ```
 
 ```sh [pnpm]
-$ pnpm add -D peach-utils
+$ pnpm add -D vanilla-utils-plus
 ```
 
 ```sh [yarn]
-$ yarn add -D peach-utils
+$ yarn add -D vanilla-utils-plus
 ```
 
 :::
@@ -21,7 +21,7 @@ $ yarn add -D peach-utils
 ## Usage
 
 ```js
-import { useEmitter } from 'peach-utils'
+import { useEmitter } from 'vanilla-utils-plus'
 
 const emitter = useEmitter()
 emitter.on('say-hi', (params) => {
