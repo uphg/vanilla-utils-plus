@@ -1,11 +1,12 @@
 import now from './now'
+import { FakeFn } from './internal/types'
 
 type throttleOptions = {
   leading?: boolean;
   trailing?: boolean;
 }
 
-function throttle<T extends Function>(
+function throttle<T extends FakeFn>(
   fn: T,
   wait: number,
   options?: throttleOptions
@@ -13,21 +14,21 @@ function throttle<T extends Function>(
   const { leading = true, trailing = true } = options ?? {}
 
   let timerId: null | number | NodeJS.Timeout = null,
-    context: unknown,
-    args: unknown[] | null,
-    result: unknown
+    context: ThisParameterType<T> | null,
+    args: Parameters<T> | null,
+    result: ReturnType<T>
 
   let previous = 0
 
   const later = function() {
     previous = !leading ? 0 : now()
     timerId = null
-    result = fn.apply(context, args)
+    result = fn.apply(context, args!)
 
     if (!timerId) context = args = null
   }
 
-  const throttled = function(this: unknown, ..._args: any) {
+  const throttled = function(this: ThisParameterType<T>, ..._args: Parameters<T>) {
     const _now = now()
     if (!previous && !leading) previous = _now
     const remaining = wait - (_now - previous)

@@ -1,5 +1,7 @@
 export type Key = string | number | symbol
 
+export type FakeFn = (...args: unknown[]) => any
+
 export interface ObjectLike<T = unknown> { [k: Key]: T }
 
 export type RecursiveArray<T> = Array<T | RecursiveArray<T>>
